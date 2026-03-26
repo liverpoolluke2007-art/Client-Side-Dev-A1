@@ -1,16 +1,19 @@
-let currentSlide = 0;
-const slides = document.querySelectorAll('.slide');
+let slideIndex = 0;
+const slides = document.getElementsByClassName("slide");
 
-function changeSlide(direction) {
-    // Hide current slide
-    slides[currentSlide].classList.remove('active');
-    
-    // Calculate new slide index
-    currentSlide = (currentSlide + direction + slides.length) % slides.length;
-    
-    // Show new slide
-    slides[currentSlide].classList.add('active');
+function changeSlide(n) {
+    showSlides(slideIndex += n);
 }
 
-// Optional: Auto-rotate every 5 seconds
-setInterval(() => changeSlide(1), 5000);
+function showSlides(n) {
+    if (n >= slides.length) { slideIndex = 0; }
+    if (n < 0) { slideIndex = slides.length - 1; }
+
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+        slides[i].classList.remove("active");
+    }
+
+    slides[slideIndex].style.display = "flex";
+    slides[slideIndex].classList.add("active");
+}
