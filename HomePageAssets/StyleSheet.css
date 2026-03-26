@@ -181,15 +181,14 @@ footer {
 .slide {
     display: none;
     position: relative;
-    height: 100%;
+    height: 80vh; /* Ensure this matches your hero height */
     width: 100%;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
 }
 
 .slide.active {
     display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .slide img {
@@ -199,14 +198,14 @@ footer {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: 1;
+    z-index: 1; /* Image at the back */
 }
 
 .hero-content {
     position: relative;
-    z-index: 2;
+    z-index: 2; /* Text at the front */
     color: white;
-    text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.6);
+}
 }
 
 .prev, .next {
