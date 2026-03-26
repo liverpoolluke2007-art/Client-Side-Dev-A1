@@ -168,7 +168,9 @@ footer {
 .hero-carousel {
     position: relative;
     height: 80vh;
+    width: 100%;
     overflow: hidden;
+    background-color: var(--navy);
 }
 
 .carousel-container {
@@ -176,44 +178,42 @@ footer {
     width: 100%;
 }
 
-
 .slide {
-    position: relative; 
+    display: none;
+    position: relative;
+    height: 100%;
     width: 100%;
-    height: 80vh;     /
-    overflow: hidden;
-    display: none;      
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .slide.active {
-    display: block;    
+    display: flex;
 }
-
 
 .slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; 
-    position: absolute; 
+    position: absolute;
     top: 0;
     left: 0;
-    z-index: 1;      
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
 }
-
 
 .hero-content {
-    position: relative; 
-    z-index: 2;        
-    color: white;      
-    padding-top: 15%;  
-    text-align: center;
+    position: relative;
+    z-index: 2;
+    color: white;
+    text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.6);
 }
-/* Side Buttons */
+
 .prev, .next {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(16, 43, 75, 0.5); /* Navy with transparency */
+    background: rgba(16, 43, 75, 0.6);
     color: white;
     padding: 20px 15px;
     border: none;
@@ -227,6 +227,9 @@ footer {
     background: var(--sea-foam);
     color: var(--navy);
 }
+
+.prev { left: 0; border-radius: 0 5px 5px 0; }
+.next { right: 0; border-radius: 5px 0 0 5px; }
 
 .prev { left: 0; border-radius: 0 5px 5px 0; }
 .next { right: 0; border-radius: 5px 0 0 5px; }
