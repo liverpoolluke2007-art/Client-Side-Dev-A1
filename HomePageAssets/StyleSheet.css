@@ -177,17 +177,11 @@ footer {
 }
 
 .slide {
-    position: absolute;
-    inset: 0;
-    opacity: 0;
-    transition: opacity 0.8s ease-in-out;
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
+    width: 100%;          
+    height: 500px;        
+    object-fit: cover;    
+    object-position: center; 
+    display: none;
 }
 
 .slide.active {
