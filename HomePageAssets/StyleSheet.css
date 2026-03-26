@@ -220,8 +220,6 @@ footer {
     z-index: 2; /* Text at the front */
     color: white;
 }
-}
-
 
 
 .prev:hover, .next:hover {
