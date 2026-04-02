@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Azure Tide Hotel | Oceanfront Luxury</title>
+    <link rel="stylesheet" href="HomePageAssets/StyleSheet.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar"> <!-- Navigation Bar -->
+            <div class="logo">
+                <span class="logo-icon">A</span>
+                <div class="logo-text">
+                    <h1>THE AZURE TIDE</h1>
+                    <p>HOTEL</p>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="dining.html">Dining</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="booking.html" class="btn-nav">Book Now</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+         <!-- Carousel -->
+    <section class="hero-carousel">
+        <div class="carousel-container">
+            
+            <div class="slide active">
+                <img src="HomePageAssets/beach-unsplash.png.jpg" alt="beach view">
+                <div class="hero-content">
+                    <h2>Find your calm at the water's edge.</h2>
+                    <p>Oceanfront luxury redefined.</p>
+                    <a href="#rooms" class="btn-primary">Explore Suites</a>
+                </div>
+            </div>
+                     <!-- Second Carousel Image -->
+            <div class="slide">
+                <img src="HomePageAssets/lobby-unsplash.png.jpg" alt="lobby view">
+                <div class="hero-content">
+                    <h2>Serenity in every wave.</h2>
+                    <p>Relax by our world-class infinity pools.</p>
+                </div>
+            </div>
+                    <!-- Third Carousel Image -->
+            <div class="slide">
+                <img src="HomePageAssets/room-unsplash.png.jpg" alt="room view">
+                <div class="hero-content">
+                    <h2>Private sands await.</h2>
+                    <p>Direct access to pristine coastal dunes.</p>
+                </div>
+            </div>
+            
+        </div> <button class="prev" onclick="changeSlide(-1)">&#10094;</button> 
+        <button class="next" onclick="changeSlide(1)">&#10095;</button>
+        
+    </section> </main>
+<footer> 
+    <ul class="nav-links">
+    <li><a href="contact.html" class="btn-nav">Contact Us</a></li>
+    </ul>
+</footer>   
+
+        <script src="HomePageAssets/CarouselScript.js"></script>
+    
+</body>
+</html>
+    
