@@ -3,13 +3,13 @@ class SiteHeader extends HTMLElement {
         this.innerHTML = `
             <header>
                 <nav class="navbar"> <!-- Navigation Bar -->
-                    <div class="logo">
+                    <a href="index.html" class="logo" style="text-decoration: none; color: inherit;">
                         <span class="logo-icon">A</span>
                         <div class="logo-text">
                             <h1>THE AZURE TIDE</h1>
                             <p>HOTEL</p>
                         </div>
-                    </div>
+                    </a>
                     <ul class="nav-links">
                         <li><a href="dining.html">Dining</a></li>
                         <li><a href="about.html">About Us</a></li>
