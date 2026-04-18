@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Azure Tide Hotel | Oceanfront Luxury</title>
+    <link rel="stylesheet" href="StyleSheet.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+    <script src="header.js" defer></script>
+    <script src="footer.js" defer></script>
+</head>
+<body>
+
+    <site-header></site-header>
+
+    <main>
+         <!-- Carousel -->
+    <section class="hero-carousel">
+        <div class="carousel-container">
+            
+            <div class="slide active">
+                <img src="HomePageAssets/beach-unsplash.png.jpg" alt="beach view">
+                <div class="hero-content">
+                    <h2>Find your calm at the water's edge.</h2>
+                    <p>Oceanfront luxury redefined.</p>
+                    <a href="#rooms" class="btn-primary">Explore Suites</a>
+                </div>
+            </div>
+                     <!-- Second Carousel Image -->
+            <div class="slide">
+                <img src="HomePageAssets/lobby-unsplash.png.jpg" alt="lobby view">
+                <div class="hero-content">
+                    <h2>Serenity in every wave.</h2>
+                    <p>Relax by our world-class infinity pools.</p>
+                </div>
+            </div>
+                    <!-- Third Carousel Image -->
+            <div class="slide">
+                <img src="HomePageAssets/room-unsplash.png.jpg" alt="room view">
+                <div class="hero-content">
+                    <h2>Private sands await.</h2>
+                    <p>Direct access to pristine coastal dunes.</p>
+                </div>
+            </div>
+            
+        </div> <button class="prev" onclick="changeSlide(-1)">&#10094;</button> 
+        <button class="next" onclick="changeSlide(1)">&#10095;</button>
+        
+    </section> </main>
+    <site-footer></site-footer>   
+
+        <script src="HomePageAssets/CarouselScript.js"></script>
+    
+</body>
+</html>
