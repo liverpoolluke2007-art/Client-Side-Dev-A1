@@ -1,0 +1,438 @@
+/* ============================================================
+   AZURE TIDE HOTEL — GLOBAL STYLESHEET
+   This file contains styles shared across ALL pages.
+   Each page also has its own section below.
+   ============================================================ */
+
+
+/* ==========================================================
+   SECTION 1: GLOBAL VARIABLES & RESET
+   (Don't touch this unless you know what you're doing)
+   ========================================================== */
+
+:root {
+    --navy: #102B4B;
+    --sea-foam: #8ED4C5;
+    --sand: #D4B28E;
+    --white: #F9F9F9;
+    --text-dark: #333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-dark);
+    line-height: 1.6;
+    background-color: var(--white);
+}
+
+/* Ensure our fonts win over Bootstrap defaults */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+}
+
+p, li, span, a, label, td, th {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+}
+
+
+/* ==========================================================
+   SECTION 2: HEADER & NAVIGATION (SHARED ACROSS ALL PAGES)
+   ========================================================== */
+
+header {
+    background: white;
+    padding: 1rem 5%;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-icon {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    color: var(--navy);
+    border: 2px solid var(--navy);
+    padding: 0 10px;
+    margin-right: 10px;
+}
+
+.logo-text h1 {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    color: var(--navy);
+}
+
+.logo-text p {
+    font-size: 0.7rem;
+    letter-spacing: 4px;
+    margin-top: -5px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--navy);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.btn-nav {
+    background: var(--navy);
+    color: white !important;
+    padding: 10px 20px;
+    border-radius: 2px;
+}
+
+/* Bootstrap hamburger icon */
+.navbar-toggler {
+    border-color: var(--navy);
+}
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23102B4B' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+
+/* ==========================================================
+   SECTION 3: FOOTER (SHARED ACROSS ALL PAGES)
+   ========================================================== */
+
+footer {
+    background: #102B4B; /* hardcode so dark mode doesn't flip it */
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.8rem;
+}
+
+footer .btn-nav {
+    border: 1px solid white;
+    color: white !important;
+}
+
+/* Dark Mode Toggle Button */
+.dark-mode-toggle {
+    background: none;
+    border: 1px solid white;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-family: inherit;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+
+/* ==========================================================
+   SECTION 4: HOME PAGE (index.html)
+   — Hero carousel, room preview cards, CTA buttons
+   — If you're working on the home page, put your styles HERE
+   ========================================================== */
+
+/* Hero Section */
+.hero {
+    height: 80vh;
+    background: linear-gradient(rgba(16, 43, 75, 0.4), rgba(16, 43, 75, 0.4)), 
+                url('https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1600&q=80');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-content h2 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2; /* Text at the front */
+    color: white;
+}
+
+.btn-primary {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 15px 40px;
+    background: var(--sea-foam);
+    color: var(--navy);
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background: var(--sand);
+}
+
+/* Carousel */
+.hero-carousel {
+    position: relative;
+    height: 80vh;
+    width: 100%;
+    overflow: hidden;
+    background-color: var(--navy);
+}
+
+.carousel-container {
+    height: 100%;
+    width: 100%;
+}
+
+.slide {
+    display: none;
+    position: relative;
+    height: 80vh; /* Ensure this matches your hero height */
+    width: 100%;
+}
+
+.slide.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slide img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0; /* Image at the very back */
+}
+
+.slide::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(16, 43, 75, 0.4); /* Dark navy semi-transparent overlay */
+    z-index: 1; /* Sits between the image and the text */
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100; /* This forces buttons to stay on top of everything */
+    background: rgba(16, 43, 75, 0.6);
+    color: white;
+    padding: 20px 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: 0.3s;
+}
+
+.prev:hover, .next:hover {
+    background: var(--sea-foam);
+    color: var(--navy);
+}
+
+.prev { left: 0; border-radius: 0 5px 5px 0; }
+.next { right: 0; border-radius: 5px 0 0 5px; }
+
+/* Room Preview Grid */
+.room-preview {
+    padding: 5rem 10%;
+    text-align: center;
+}
+
+.room-preview h3 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: var(--navy);
+    margin-bottom: 3rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background: var(--white);
+    padding-bottom: 2rem;
+    border-bottom: 3px solid var(--sea-foam);
+    color: var(--text-dark);
+}
+
+.card-img {
+    height: 250px;
+    margin-bottom: 1.5rem;
+}
+
+.card h4 {
+    margin-bottom: 0.5rem;
+}
+
+
+/* ==========================================================
+   SECTION 5: ABOUT PAGE (about.html)
+   — If you're working on the about page, put your styles HERE
+   ========================================================== */
+
+/* Add about page styles below this line */
+
+
+/* ==========================================================
+   SECTION 6: BOOKING PAGE (booking.html)
+   — If you're working on the booking page, put your styles HERE
+   ========================================================== */
+
+/* Add booking page styles below this line */
+
+
+/* ==========================================================
+   SECTION 7: DARK MODE (APPLIES TO ALL PAGES)
+   — Handles the light/dark theme toggle
+   ========================================================== */
+
+body.dark-mode {
+    --white: #121212;
+    --text-dark: #E8E8E8;
+    background-color: #121212;
+}
+
+body.dark-mode header {
+    background: #1a1a1a;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+/* All text must be light in dark mode */
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5 {
+    color: #F0F0F0 !important;
+}
+
+body.dark-mode p,
+body.dark-mode li,
+body.dark-mode span,
+body.dark-mode td,
+body.dark-mode th,
+body.dark-mode label {
+    color: #D4D4D4 !important;
+}
+
+body.dark-mode a {
+    color: var(--sea-foam) !important;
+}
+
+/* Links/buttons WITH seafoam backgrounds need dark text, not seafoam text */
+body.dark-mode a.btn-primary,
+body.dark-mode a.btn-nav {
+    color: #102B4B !important;
+}
+
+body.dark-mode .logo-text h1,
+body.dark-mode .logo-text p {
+    color: #F0F0F0 !important;
+}
+
+body.dark-mode .nav-links a {
+    color: #E8E8E8 !important;
+}
+
+body.dark-mode .logo-icon {
+    color: var(--sea-foam);
+    border-color: var(--sea-foam);
+}
+
+body.dark-mode .card {
+    background: #1E1E1E;
+    border-bottom-color: var(--sea-foam);
+}
+
+body.dark-mode .room-preview {
+    background: #121212;
+}
+
+/* Header btn-nav (Book Now) stays visible in dark mode */
+body.dark-mode header .btn-nav {
+    background: var(--sea-foam) !important;
+    color: #102B4B !important;
+    border-color: var(--sea-foam) !important;
+}
+
+/* Footer stays dark always */
+body.dark-mode footer {
+    background: #0a0a0a;
+}
+
+body.dark-mode footer .btn-nav {
+    background: transparent !important;
+    border: 1px solid var(--sea-foam) !important;
+    color: var(--sea-foam) !important;
+}
+
+body.dark-mode .dark-mode-toggle {
+    border-color: var(--sea-foam);
+    color: var(--sea-foam);
+}
+
+body.dark-mode .navbar-toggler {
+    border-color: var(--sea-foam);
+}
+body.dark-mode .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%238ED4C5' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+
+/* ==========================================================
+   SECTION 8: MOBILE RESPONSIVE (APPLIES TO ALL PAGES)
+   — Media queries for smaller screens
+   ========================================================== */
+
+@media (max-width: 768px) {
+    .hero-content h2 { font-size: 2rem !important; }
+    .hero, .hero-carousel, .slide { height: 50vh !important; }
+    .room-preview { padding: 3rem 5%; }
+}
