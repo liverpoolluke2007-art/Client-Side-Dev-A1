@@ -4,6 +4,7 @@ class SiteHeader extends HTMLElement {
             <header>
                 <nav class="navbar navbar-expand-md">
                     <a href="index.html" class="logo" style="text-decoration: none; color: inherit;">
+                    <a href="/Contact page/index.html" class="logo" style="text-decoration: none; color: inherit;">
                         <span class="logo-icon">A</span>
                         <div class="logo-text">
                             <h1>THE AZURE TIDE</h1>
@@ -19,6 +20,10 @@ class SiteHeader extends HTMLElement {
                             <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
                             <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
                             <li class="nav-item"><a href="booking.html" class="btn-nav">Book Now</a></li>
+                            <li class="nav-item"><a href="/DiningMenu.HTML" class="nav-link">Dining</a></li>
+                            <li class="nav-item"><a href="/about.html" class="nav-link">About Us</a></li>
+                            <li class="nav-item"><a href="/Contact page/contact.html" class="nav-link">Contact</a></li>
+                            <li class="nav-item"><a href="/booking.html" class="btn-nav">Book Now</a></li>
                         </ul>
                     </div>
                 </nav>
