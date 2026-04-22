@@ -319,7 +319,68 @@ footer .btn-nav {
    — If you're working on the booking page, put your styles HERE
    ========================================================== */
 
-/* Add booking page styles below this line */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+.hero {
+  height: 100vh;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+              url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.hero-content {
+  max-width: 600px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.btn {
+  padding: 12px 25px;
+  background: #ff6b6b;
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #ff4b4b;
+}
+
+/* Initial hidden state */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* When visible */
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Optional: stagger delays */
+.delay-1 { transition-delay: 0.2s; }
+.delay-2 { transition-delay: 0.4s; }
+.delay-3 { transition-delay: 0.6s; }
 
 
 /* ==========================================================
