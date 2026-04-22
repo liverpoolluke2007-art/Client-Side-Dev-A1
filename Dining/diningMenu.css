@@ -1,6 +1,77 @@
 
     * { box-sizing: border-box; }
+header {
+    background: white;
+    padding: 1rem 5%;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
 
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-icon {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 2rem;
+    color: var(--navy);
+    border: 2px solid var(--navy);
+    padding: 0 10px;
+    margin-right: 10px;
+}
+
+.logo-text h1 {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    color: var(--navy);
+}
+
+.logo-text p {
+    font-size: 0.7rem;
+    letter-spacing: 4px;
+    margin-top: -5px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--navy);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.btn-nav {
+    background: var(--navy);
+    color: white !important;
+    padding: 10px 20px;
+    border-radius: 2px;
+}
+
+/* Bootstrap hamburger icon */
+.navbar-toggler {
+    border-color: var(--navy);
+}
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23102B4B' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -38,22 +109,22 @@
     }
 
     .container {
+      background: #ffffff;
       max-width: 760px;
       margin: 0 auto;
       padding: 20px;
     }
 
     .intro {
-      background: rgba(255,255,255,0.9);
+      background: rgb(255, 255, 255);
       border-radius: 18px;
       padding: 20px;
       margin-bottom: 20px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
-      line-height: 1.6;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
     }
 
     .card {
-      background: white;
+      background: rgb(255, 255, 255);
       border-radius: 18px;
       padding: 18px;
       margin-bottom: 18px;
@@ -122,4 +193,136 @@
       .menu-item {
         align-items: flex-start;
       }
-    }
+    }footer {
+    background: #102B4B; /* hardcode so dark mode doesn't flip it */
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.8rem;
+}
+
+footer .btn-nav {
+    border: 1px solid white;
+    color: white !important;
+}
+
+/* Dark Mode Toggle Button */
+.dark-mode-toggle {
+    background: none;
+    border: 1px solid white;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-family: inherit;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    border-radius: 2px;
+    transition: 0.3s;
+}body.dark-mode {
+    --white: #121212;
+    --text-dark: #E8E8E8;
+    background-color: #121212;
+}
+
+body.dark-mode header {
+    background: #102B4B;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+/* All text must be light in dark mode */
+body.dark-mode .intro{
+    background: #1E1E1E !important;
+    color: #F0F0F0 !important;
+}
+body.dark-mode .container {
+    background: #121212 !important;
+}
+body.dark-mode .card {
+    background: #1E1E1E !important;
+}
+body.dark-mode .card,
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5 {
+    color: #F0F0F0 !important;
+}
+body.dark-mode .intro,
+body.dark-mode p,
+body.dark-mode li,
+body.dark-mode span,
+body.dark-mode td,
+body.dark-mode th,
+body.dark-mode label {
+    color: #D4D4D4 !important;
+}
+
+body.dark-mode a {
+    color: var(--sea-foam) !important;
+}
+
+/* Links/buttons WITH seafoam backgrounds need dark text, not seafoam text */
+body.dark-mode a.btn-primary,
+body.dark-mode a.btn-nav {
+    color: #102B4B !important;
+}
+
+body.dark-mode .logo-text h1,
+body.dark-mode .logo-text p {
+    color: #F0F0F0 !important;
+}
+
+body.dark-mode .nav-links a {
+    color: #E8E8E8 !important;
+}
+
+body.dark-mode .logo-icon {
+    color: var(--sea-foam);
+    border-color: var(--sea-foam);
+}
+
+body.dark-mode .card {
+    background: #1E1E1E;
+    border-bottom-color: var(--sea-foam);
+}
+
+body.dark-mode .room-preview {
+    background: #121212;
+}
+
+/* Header btn-nav (Book Now) stays visible in dark mode */
+body.dark-mode header .btn-nav {
+    background: var(--sea-foam) !important;
+    color: #102B4B !important;
+    border-color: var(--sea-foam) !important;
+}
+
+/* Footer stays dark always */
+body.dark-mode footer {
+    background: #102B4B;
+}
+
+body.dark-mode footer .btn-nav {
+    background: transparent !important;
+    border: 1px solid var(--sea-foam) !important;
+    color: var(--sea-foam) !important;
+}
+
+body.dark-mode .dark-mode-toggle {
+    border-color: var(--sea-foam);
+    color: var(--sea-foam);
+}
+
+body.dark-mode .navbar-toggler {
+    border-color: var(--sea-foam);
+}
+body.dark-mode .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%238ED4C5' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}@media (max-width: 768px) {
+    .hero-content h2 { font-size: 2rem !important; }
+    .hero, .hero-carousel, .slide { height: 50vh !important; }
+    .room-preview { padding: 3rem 5%; }
+}

@@ -1,6 +1,35 @@
 console.log("script loaded");
 const app = document.getElementById("app");
+class SiteHeader extends HTMLElement {
+    connectedCallback() {
+        this.innerHTML = `
+            <header>
+                <nav class="navbar navbar-expand-md">
+                    <a href="/Contact page/index.html" class="logo" style="text-decoration: none; color: inherit;">
+                        <span class="logo-icon">A</span>
+                        <div class="logo-text">
+                            <h1>THE AZURE TIDE</h1>
+                            <p>HOTEL</p>
+                        </div>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+                        <ul class="nav-links navbar-nav">
+                            <li class="nav-item"><a href="/Dining/DiningMenu.HTML" class="nav-link">Dining</a></li>
+                            <li class="nav-item"><a href="/About/about.html" class="nav-link">About Us</a></li>
+                            <li class="nav-item"><a href="/Contact page/contact.html" class="nav-link">Contact</a></li>
+                            <li class="nav-item"><a href="/Booking/booking.html" class="btn-nav">Book Now</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </header>
+        `;
+    }
+}
 
+customElements.define('site-header', SiteHeader);
 const menu = [
   {
     title: "Starters",
@@ -118,5 +147,37 @@ function createPage() {
   reserveCard.appendChild(button);
   app.appendChild(reserveCard);
 }
+class SiteFooter extends HTMLElement {
+    connectedCallback() {
+        this.innerHTML = `
+            <footer> 
+                <ul class="nav-links">
+                <li><a href="contact.html" class="btn-nav">Contact Us</a></li>
+                <li><button id="darkModeToggle" class="dark-mode-toggle">🌙 Dark Mode</button></li>
+                </ul>
+            </footer>
+        `;
+        
+        const toggleBtn = this.querySelector('#darkModeToggle');
+        const body = document.body;
+
+        // Check if dark mode was previously enabled in localStorage
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            body.classList.add('dark-mode');
+            toggleBtn.textContent = '☀️ Light Mode';
+        }
+
+        // Toggle dark mode on click
+        toggleBtn.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            const isDarkMode = body.classList.contains('dark-mode');
+            
+            localStorage.setItem('darkMode', isDarkMode ? 'enabled' : 'disabled');
+            toggleBtn.textContent = isDarkMode ? '☀️ Light Mode' : '🌙 Dark Mode';
+        });
+    }
+}
+
+customElements.define('site-footer', SiteFooter);
 
 createPage();
