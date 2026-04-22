@@ -17,6 +17,39 @@
     <!-- Site stylesheet -->
     <link rel="stylesheet" href="css/StyleSheet.css">
 
+    <!-- Styles for smooth carousel fade transition -->
+    <style>
+        .carousel-container {
+            position: relative;
+            aspect-ratio: 16 / 9; /* Set a fixed aspect ratio to give the container size */
+        }
+        .slide {
+            /* Stack slides on top of each other and hide by default */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex; /* Use flexbox to center content */
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            pointer-events: none; /* Prevent interaction with hidden slides */
+        }
+        .slide > img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensure image covers the slide area without distortion */
+        }
+        .slide.active {
+            /* Show the active slide and allow interaction */
+            opacity: 1;
+            pointer-events: auto;
+        }
+    </style>
+
     <!-- Google Fonts: display=swap prevents render-blocking -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400&display=swap" rel="stylesheet"></noscript>
@@ -63,14 +96,14 @@
                 </div>
             </div>
             
-        </div> <button class="prev" onclick="changeSlide(-1)">&#10094;</button> 
-        <button class="next" onclick="changeSlide(1)">&#10095;</button>
+        </div> <button class="prev">&#10094;</button> 
+        <button class="next">&#10095;</button>
         
     </section> </main>
     <site-footer></site-footer>   
 
         <!-- Carousel script deferred so it doesn't block rendering -->
-        <script src="js/CarouselScript.js" defer></script>
+        <script src="../HomePageAssets/CarouselScript.js" defer></script>
         <!-- Bootstrap JS Bundle -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous" defer></script>
     

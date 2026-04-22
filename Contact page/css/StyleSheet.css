@@ -227,9 +227,7 @@ footer .btn-nav {
 }
 
 .slide.active {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    /* Centering is now handled by the inline style block for all slides */
 }
 
 .slide img {
