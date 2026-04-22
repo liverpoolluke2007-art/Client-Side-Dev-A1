@@ -1,13 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Azure Tide Hotel | Oceanfront Luxury</title>
-    <link rel="stylesheet" href="StyleSheet.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400&display=swap" rel="stylesheet">
-    <script src="header.js" defer></script>
-    <script src="footer.js" defer></script>
+    <meta name="description" content="Experience coastal elegance at The Azure Tide Hotel. Located on the pristine shores of Northern Ireland, offering world-class luxury and serenity.">
+
+    <!-- Preconnect to external origins so DNS + TLS is done before CSS requests them -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+    <!-- Favicon -->
+   <link rel="icon" type="image/png" href="favicon.png">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- Site stylesheet -->
+    <link rel="stylesheet" href="Contact Page/css/StyleSheet.css">
+
+    <!-- Styles for smooth carousel fade transition -->
+    <style>
+        .carousel-container {
+            position: relative;
+            aspect-ratio: 16 / 9; /* Set a fixed aspect ratio to give the container size */
+        }
+        .slide {
+            /* Stack slides on top of each other and hide by default */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex; /* Use flexbox to center content */
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            pointer-events: none; /* Prevent interaction with hidden slides */
+        }
+        .slide > img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensure image covers the slide area without distortion */
+        }
+        .slide.active {
+            /* Show the active slide and allow interaction */
+            opacity: 1;
+            pointer-events: auto;
+        }
+    </style>
+
+    <!-- Google Fonts: display=swap prevents render-blocking -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400&display=swap" rel="stylesheet"></noscript>
+
+    <!-- Preload the LCP image (first carousel slide) -->
+    <link rel="preload" as="image" href="images/beach-optimised.webp">
+
+    <script src="Contact page/js/header.js" defer></script>
+    <script src="Contact page/js/footer.js" defer></script>
 </head>
 <body>
 
@@ -19,7 +75,8 @@
         <div class="carousel-container">
             
             <div class="slide active">
-                <img src="HomePageAssets/beach-unsplash.png.jpg" alt="beach view">
+                <!-- fetchpriority=high tells the browser this is the LCP image -->
+                <img src="Contact page/images/beach-optimised.webp" alt="Sunny panoramic view of the private beach at The Azure Tide Hotel" width="1600" height="900" fetchpriority="high">
                 <div class="hero-content">
                     <h2>Find your calm at the water's edge.</h2>
                     <p>Oceanfront luxury redefined.</p>
@@ -28,7 +85,8 @@
             </div>
                      <!-- Second Carousel Image -->
             <div class="slide">
-                <img src="HomePageAssets/lobby-unsplash.png.jpg" alt="lobby view">
+                <!-- loading=lazy defers off-screen slides -->
+                <img src="Contact page/images/lobby-optimised.webp" alt="The elegant and spacious main lobby of The Azure Tide Hotel" width="1600" height="900" loading="lazy">
                 <div class="hero-content">
                     <h2>Serenity in every wave.</h2>
                     <p>Relax by our world-class infinity pools.</p>
@@ -36,20 +94,23 @@
             </div>
                     <!-- Third Carousel Image -->
             <div class="slide">
-                <img src="HomePageAssets/room-unsplash.png.jpg" alt="room view">
+                <img src="Contact page/images/room-optimised.webp" alt="Luxury oceanfront suite with a private balcony at The Azure Tide Hotel" width="1600" height="900" loading="lazy">
                 <div class="hero-content">
                     <h2>Private sands await.</h2>
                     <p>Direct access to pristine coastal dunes.</p>
                 </div>
             </div>
             
-        </div> <button class="prev" onclick="changeSlide(-1)">&#10094;</button> 
-        <button class="next" onclick="changeSlide(1)">&#10095;</button>
+        </div> <button class="prev">&#10094;</button> 
+        <button class="next">&#10095;</button>
         
     </section> </main>
     <site-footer></site-footer>   
 
-        <script src="HomePageAssets/CarouselScript.js"></script>
+        <!-- Carousel script deferred so it doesn't block rendering -->
+        <script src="../HomePageAssets/CarouselScript.js" defer></script>
+        <!-- Bootstrap JS Bundle -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous" defer></script>
     
 </body>
 </html>

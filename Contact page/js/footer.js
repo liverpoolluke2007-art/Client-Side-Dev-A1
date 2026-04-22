@@ -3,7 +3,7 @@ class SiteFooter extends HTMLElement {
         this.innerHTML = `
             <footer> 
                 <ul class="nav-links">
-                <li><a href="contact.html" class="btn-nav">Contact Us</a></li>
+                <li><a href="Contact Page/contact.html" class="btn-nav">Contact Us</a></li>
                 <li><button id="darkModeToggle" class="dark-mode-toggle">🌙 Dark Mode</button></li>
                 </ul>
             </footer>
