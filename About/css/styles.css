@@ -1,0 +1,292 @@
+/* ============================================================
+   CONTACT PAGE STYLES (contact.html)
+   This file handles everything on the Contact Us page.
+   If you're editing the contact page, this is your file.
+   — Aaron
+   ============================================================ */
+
+
+/* ---------- CSS CUSTOM PROPERTIES ---------- */
+/* (variables so we dont have to type hex codes 500 times) */
+:root {
+    --color-navy: #102B4B;
+    --color-seafoam: #8ED4C5;
+    --color-beige: #D4B28E;
+    --color-white: #FFFFFF;
+    --color-off-white: #FAFAF8;
+    --color-gray: #E8E8E4;
+    --color-text: #4A4A46;
+    --color-error: #D94F4F;
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+/* ---------- RESET & BASE ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--color-navy);
+    background-color: var(--color-off-white);
+    line-height: 1.6;
+}
+
+/* Beat Bootstrap's default gray text */
+body p, body li, body span, body td, body th {
+    color: inherit;
+    font-family: var(--font-body);
+}
+
+a { color: var(--color-seafoam); text-decoration: none; }
+a:hover { color: var(--color-navy); text-decoration: underline; }
+ul { list-style: none; }
+button { cursor: pointer; border: none; background: none; font-family: inherit; }
+
+/* ---------- SKIP LINK (Accessibility) ---------- */
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--color-navy);
+    color: var(--color-white);
+    padding: 10px 20px;
+    border-radius: 0 0 5px 5px;
+    z-index: 1000;
+}
+.skip-link:focus { top: 0; outline: 3px solid var(--color-seafoam); }
+
+/* ---------- UTILITIES ---------- */
+.section-container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+.section-heading { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 2.5rem; text-align: center; margin-bottom: 10px; }
+.section-subheading { text-align: center; color: var(--color-text); margin-bottom: 40px; }
+
+/* ---------- HERO SECTION ---------- */
+/* the background image took forever to position correctly */
+.hero {
+    min-height: 50vh;
+    background: linear-gradient(rgba(16, 43, 75, 0.7), rgba(16, 43, 75, 0.7)), url('../images/hero-bg.webp');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* finally centered the div */
+    text-align: center;
+    color: #FFFFFF;
+    padding: 40px 20px;
+}
+.hero__title { font-family: var(--font-heading); font-size: 3.5rem; margin-bottom: 15px; }
+.hero__subtitle { font-size: 1.2rem; max-width: 600px; margin: 0 auto 20px; }
+.hero__slogan { font-style: italic; color: var(--color-seafoam); }
+.hero__scroll-indicator { display: none; } /* Simplified */
+
+/* ---------- CONTACT INFO CARDS ---------- */
+/* these cards flip open when you click them, pretty proud of this ngl */
+.contact-info { padding: 60px 0; }
+.contact-cards { display: block; }
+.contact-card {
+    background: var(--color-white);
+    border: 1px solid var(--color-gray);
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+.contact-card:hover { transform: translateY(-5px); border-color: var(--color-seafoam); }
+.contact-card__front { padding: 30px 20px; }
+.contact-card__icon-wrap {
+    width: 60px;
+    height: 60px;
+    background: var(--color-seafoam);
+    color: var(--color-navy);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+}
+.contact-card__title { font-family: 'Playfair Display', serif; font-weight: 600; font-size: 1.3rem; margin-bottom: 5px; }
+.contact-card__hint { font-size: 0.9rem; color: var(--color-text); }
+.contact-card__details { display: none; padding: 20px; border-top: 1px solid var(--color-gray); }
+.contact-card__address { font-style: normal; margin-bottom: 15px; line-height: 1.8; }
+.contact-card__map-wrap iframe { width: 100%; border-radius: 5px; }
+.contact-card__list li { 
+    padding: 12px 0; 
+    border-bottom: 1px solid var(--color-gray); 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    gap: 5px; 
+    word-break: break-word; /* WHY DO EMAILS HAVE TO BE SO LONG, took 4 monsters to fix this overflow */
+}
+.contact-card__list li span {
+    color: var(--color-text);
+    font-size: 0.9rem;
+}
+
+/* ---------- CONTACT FORM ---------- */
+/* if this form breaks i am dropping out */
+.contact-form-section { padding: 60px 0; background: var(--color-gray); }
+.form-wrapper { background: var(--color-white); padding: 40px; border-radius: 8px; max-width: 700px; margin: 0 auto; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+.form-row { display: flex; gap: 20px; }
+.form-row .form-group { flex: 1; }
+.form-group { display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px; }
+.form-label { font-weight: bold; color: var(--color-navy); font-size: 0.9rem; }
+.form-required { color: var(--color-error); }
+.form-input {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    width: 100%;
+}
+.form-input:focus { border-color: var(--color-seafoam); outline: none; }
+.form-input--error { border-color: var(--color-error); }
+.form-textarea { resize: vertical; min-height: 120px; }
+.form-textarea-footer { display: flex; justify-content: space-between; margin-top: 5px; }
+.form-char-count { font-size: 0.8rem; color: var(--color-text); }
+.form-error { color: var(--color-error); font-size: 0.8rem; display: none; }
+.form-submit {
+    background: var(--color-navy);
+    color: #FFFFFF; /* hardcoded white so dark mode var flip doesn't hide button text */
+    padding: 15px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    width: 100%;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+.form-submit:hover { background: var(--color-seafoam); color: var(--color-navy); }
+
+/* Success State */
+.form-success { text-align: center; display: none; padding: 30px 0; }
+.form-success__icon { margin-bottom: 20px; }
+.form-success__title { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 2rem; color: var(--color-navy); margin-bottom: 10px; }
+.form-success__summary { background: var(--color-off-white); padding: 20px; border-radius: 5px; text-align: left; margin: 20px 0; }
+.form-success__btn { padding: 10px 20px; border: 2px solid var(--color-navy); border-radius: 4px; font-weight: bold; }
+.form-success__btn:hover { background: var(--color-navy); color: var(--color-white); }
+
+/* ---------- FAQ ACCORDION ---------- */
+/* copied the accordion logic from w3schools and modified it, no shame */
+.faq-section { padding: 60px 0; }
+.faq-list { max-width: 700px; margin: 0 auto; }
+.faq-item { background: var(--color-white); border: 1px solid var(--color-gray); margin-bottom: 10px; border-radius: 4px; }
+.faq-item__question {
+    width: 100%;
+    padding: 20px;
+    text-align: left;
+    font-weight: bold;
+    color: var(--color-navy);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.faq-item__question:hover { background: var(--color-off-white); }
+.faq-item__answer { display: none; padding: 0 20px 20px; color: var(--color-text); line-height: 1.7; }
+.faq-item__icon { transition: transform 0.3s; }
+.faq-item--active .faq-item__icon { transform: rotate(180deg); }
+
+/* ---------- RESPONSIVE ---------- */
+/* mobile first they said, it'll be easy they said */
+@media (max-width: 768px) {
+    .contact-cards, .form-row { flex-direction: column; gap: 15px; }
+    .form-wrapper { padding: 15px; max-width: 100% !important; width: 100% !important; box-sizing: border-box; }
+    .form-input, .form-control { font-size: 16px; } /* prevents iOS zoom on focus */
+    .contact-form-section { padding: 20px 0; }
+    .contact-form-section .container { padding-left: 10px; padding-right: 10px; }
+    .contact-info { padding: 30px 10px; }
+    .section-heading { font-size: 1.8rem; }
+    .section-subheading { font-size: 0.9rem; }
+    .hero__title { font-size: 2rem; }
+    .hero { padding: 30px 15px; min-height: 40vh; }
+    .faq-section { padding: 30px 10px; }
+    .faq-list { padding: 0 10px; }
+}
+
+/* ---------- ACCESSIBILITY / HIGH CONTRAST ---------- */
+@media (prefers-contrast: high) {
+    .form-input, .contact-card, .faq-item { border: 2px solid #000; }
+    .contact-card__title, .form-label, .faq-item__question { color: #000; }
+}
+
+/* ---------- DARK MODE OVERRIDES ---------- */
+/* this section alone nearly made me switch to computer science */
+body.dark-mode {
+    --color-off-white: #121212;
+    --color-white: #1E1E1E;
+    --color-gray: #2C2C2C;
+    --color-text: #D4D4D4;
+    background-color: #121212;
+    color: #E8E8E8;
+}
+
+/* All headings go white in dark mode */
+body.dark-mode .section-heading,
+body.dark-mode .hero__title,
+body.dark-mode .contact-card__title,
+body.dark-mode .faq-item__question,
+body.dark-mode .form-success__title {
+    color: #F0F0F0 !important;
+}
+
+/* All body text goes light gray in dark mode */
+body.dark-mode .section-subheading,
+body.dark-mode .contact-card__hint,
+body.dark-mode .contact-card__address,
+body.dark-mode .faq-item__answer,
+body.dark-mode .form-char-count,
+body.dark-mode .hero__subtitle {
+    color: #BBBBBB !important;
+}
+
+body.dark-mode .contact-card__list li span {
+    color: #BBBBBB !important;
+}
+
+body.dark-mode .contact-card__list li a {
+    color: var(--color-seafoam) !important;
+}
+
+/* Keep icon text dark on the seafoam circles */
+body.dark-mode .contact-card__icon-wrap,
+body.dark-mode .contact-card__icon-wrap span,
+body.dark-mode .contact-card__icon-wrap svg {
+    color: #102B4B !important;
+}
+
+/* Form labels must be white */
+body.dark-mode .form-label {
+    color: #F0F0F0 !important;
+}
+
+/* Form inputs get dark backgrounds */
+body.dark-mode .form-input,
+body.dark-mode .form-control {
+    background: #2C2C2C !important;
+    color: #FFFFFF !important;
+    border-color: #555 !important;
+}
+
+body.dark-mode .form-input:focus,
+body.dark-mode .form-control:focus {
+    background: #333 !important;
+    border-color: var(--color-seafoam) !important;
+}
+
+body.dark-mode .form-input::placeholder,
+body.dark-mode .form-control::placeholder {
+    color: #888 !important;
+}
+
+/* Form submit button — keep it functional */
+body.dark-mode .form-submit {
+    background: var(--color-seafoam);
+    color: #102B4B;
+}
+
+body.dark-mode .form-success__summary { background: #2C2C2C; }
