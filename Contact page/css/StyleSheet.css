@@ -226,10 +226,6 @@ footer .btn-nav {
     width: 100%;
 }
 
-.slide.active {
-    /* Centering is now handled by the inline style block for all slides */
-}
-
 .slide img {
     position: absolute;
     top: 0;
