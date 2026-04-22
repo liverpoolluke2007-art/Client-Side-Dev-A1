@@ -3,7 +3,6 @@ class SiteHeader extends HTMLElement {
         this.innerHTML = `
             <header>
                 <nav class="navbar navbar-expand-md">
-                    <a href="index.html" class="logo" style="text-decoration: none; color: inherit;">
                     <a href="/Contact page/index.html" class="logo" style="text-decoration: none; color: inherit;">
                         <span class="logo-icon">A</span>
                         <div class="logo-text">
@@ -16,10 +15,6 @@ class SiteHeader extends HTMLElement {
                     </button>
                     <div class="collapse navbar-collapse justify-content-end" id="navMenu">
                         <ul class="nav-links navbar-nav">
-                            <li class="nav-item"><a href="diningMenu.HTML" class="nav-link">Dining</a></li>
-                            <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
-                            <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-                            <li class="nav-item"><a href="booking.html" class="btn-nav">Book Now</a></li>
                             <li class="nav-item"><a href="/DiningMenu.HTML" class="nav-link">Dining</a></li>
                             <li class="nav-item"><a href="/about.html" class="nav-link">About Us</a></li>
                             <li class="nav-item"><a href="/Contact page/contact.html" class="nav-link">Contact</a></li>
