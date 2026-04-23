@@ -5,7 +5,7 @@ class SiteHeader extends HTMLElement {
         this.innerHTML = `
             <header>
                 <nav class="navbar navbar-expand-md">
-                    <a href="/Contact page/index.html" class="logo" style="text-decoration: none; color: inherit;">
+                    <a href="/index.html" class="logo" style="text-decoration: none; color: inherit;">
                         <span class="logo-icon">A</span>
                         <div class="logo-text">
                             <h1>THE AZURE TIDE</h1>
