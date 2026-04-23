@@ -320,57 +320,115 @@ footer .btn-nav {
    ========================================================== */
 
 .booking-section {
-      padding: 60px 20px;
-      text-align: center;
-      background: #ffffff;
-    }
+    padding: 60px 20px;
+    text-align: center;
+    background: #ffffff;
+}
 
-    .booking-section h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-      color: #1e4f7a;
-    }
+.booking-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #1e4f7a;
+}
 
-    .booking-form {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
+.booking-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
 
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      text-align: left;
-    }
+.form-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
 
-    .form-group label {
-      margin-bottom: 5px;
-      font-weight: 600;
-    }
+.form-group label {
+    margin-bottom: 5px;
+    font-weight: 600;
+}
 
-    .form-group input {
-      padding: 10px;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-      font-size: 1rem;
-    }
+.form-group input {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
 
-    .booking-form button {
-      padding: 12px 25px;
-      border: none;
-      border-radius: 8px;
-      background-color: #1e4f7a;
-      color: white;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
+.booking-form button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    background-color: #1e4f7a;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
 
-    .booking-form button:hover {
-      background-color: #163a59;
-    }
+.booking-form button:hover {
+    background-color: #163a59;
+}
 
+.guest-section {
+    padding: 60px 20px;
+    background: #ffffff;
+    text-align: center;
+}
+
+.guest-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 800px;
+    margin: auto;
+}
+
+.guest-form .full-width {
+    width: 100%;
+}
+
+.guest-form textarea {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    width: 100%;
+    resize: vertical;
+}
+
+.guest-form button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    background-color: #1e4f7a;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.guest-form button:hover {
+    background-color: #163a59;
+}
+
+.summary-section {
+    padding: 60px 20px;
+    background: #e6f2ff;
+    text-align: center;
+}
+
+.summary-card {
+background: white;
+padding: 25px;
+margin: auto;
+max-width: 500px;
+border-radius: 12px;
+box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+text-align: left;
+}
 
 /* ==========================================================
    SECTION 7: DARK MODE (APPLIES TO ALL PAGES)

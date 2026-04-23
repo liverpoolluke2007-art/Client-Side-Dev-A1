@@ -1,7 +1,7 @@
 const checkin = document.getElementById('checkin');
     const checkout = document.getElementById('checkout');
 
-    // Prevent selecting past dates
+    //Prevent selecting past dates
     const today = new Date().toISOString().split('T')[0];
     checkin.setAttribute('min', today);
 
