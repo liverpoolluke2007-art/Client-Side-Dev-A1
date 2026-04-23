@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const summarySection = document.getElementById('summarySection');
 
     summaryCard.innerHTML = `
-      <h3>Booking Confirmed ✅</h3>
+      <h3>Booking Confirmed</h3>
       <p><strong>Name:</strong> ${title} ${firstName} ${lastName}</p>
       <p><strong>Email:</strong> ${email}</p>
       <p><strong>Room Type:</strong> ${roomType}</p>
